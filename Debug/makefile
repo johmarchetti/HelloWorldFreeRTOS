@@ -35,10 +35,10 @@ endif
 all: HelloWorld.elf
 
 # Tool invocations
-HelloWorld.elf: $(OBJS) $(USER_OBJS) C:\dev\HelloWorld/LinkerScript.ld
+HelloWorld.elf: $(OBJS) $(USER_OBJS) D:\Documents\GitHub\HelloWorldFreeRTOS/LinkerScript.ld
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU GCC Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:/dev/HelloWorld/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "HelloWorld.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Documents/GitHub/HelloWorldFreeRTOS/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "HelloWorld.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
